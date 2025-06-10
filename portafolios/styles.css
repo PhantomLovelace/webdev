@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #4e4c4c;
+    background-image: url('images/background-2426328_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    flex: 1;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+.navbar a:hover {
+    color: rgb(216, 75, 75);
+    text-decoration: solid;
+    background-color: rgb(52, 160, 31);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+#nombre{
+    padding: 10px;
+}
+
+.pagefoot {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #eee;
+}
+
+.pagefoot img{
+    margin: 0;
+    padding: 0;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.pagehead {
+    display: flex;
+    background-color: #333;
+    color:#eee;
+    padding: 20px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.pagehead h1{
+    color:#eee;
+    font-size: 1.5em;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.principal{
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: justify;
+    background-color: aliceblue;
+    opacity: 0.75;
+}
+
+.principal img{
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 20%;
+    max-height: 20%;
+    min-width: 10%;
+    min-height: 10%;
+    border-radius: 100%;  
+}
+
+.principal p{
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    padding: 2px;
+}
+
+/* Script para el menu hamburguesa */
+.burger {
+    display: none;
+    cursor: pointer;      
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+#chekburger{
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        right: -100%;
+        height: 92vh;
+        top: 8vh;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transition: 0.3s ease-in;
+        z-index: 1; /* manda el .navbar al frente (adelante del main) */
+    }
+
+    #chekburger:checked ~ .navbar {
+        right: 0;
+    }
+
+    .navbar a{
+        margin: 2rem 0;
+        color: #2c3e50
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .chkbttn{
+        display: block;
+    }
+
+    .pagehead{
+        font-size: 15px;
+    }
+
+/* para convertir burger en x */
+    #chekburger:checked + .chkbttn .line:nth-child(1) {
+        transform: rotate(45deg) translate(0, 12px);
+    }
+
+     #chekburger:checked + .chkbttn .line:nth-child(2) {
+        scale: 0;
+    }
+
+    #chekburger:checked + .chkbttn .line:nth-child(3) {
+        transform: rotate(-45deg) translate(0, -12px);
+    }
+
+ 
+}
+
+   /* pagina curriculum */
+    .curriculum{
+       
+        height: 80vh;
+        width: 100%;
+    }
+
+/* pagina de contacto */
+.contacto{
+
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #f8f9fa;
+    transform: translateX(10px);
+}
+
+.contact-item i {
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.contact-item a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.fa-phone { color: #25D366; }
+.fa-envelope { color: #EA4335; }
+.fa-facebook { color: #1877F2; }
+.fa-instagram { color: #E4405F; }
+.fa-linkedin { color: #0A66C2; }
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .contact-item {
+        padding: 10px;
+    }
+}
